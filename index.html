@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script> window.FontAwesomeConfig = { autoReplaceSvg: 'nest'};</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        ::-webkit-scrollbar { display: none; }
+        body { font-family: 'Poppins', sans-serif; }
+        .scrolling-text-container {
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .scrolling-text {
+            display: inline-block;
+            animation: scroll-left 30s linear infinite;
+            padding-left: 100%;
+        }
+        @keyframes scroll-left {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-100%); }
+        }
+        .dropdown:hover .dropdown-menu { display: block; }
+        .dropdown-menu { display: none; }
+        .brand-carousel {
+            display: flex;
+            animation: scroll-brands 40s linear infinite;
+        }
+        @keyframes scroll-brands {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .marquee-container {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            color: white;
+        }
+        .marquee-content {
+            display: inline-block;
+            white-space: nowrap;
+            animation: marquee 30s linear infinite;
+            padding-left: 100%;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+        .dropdown:hover .dropdown-menu { display: block; }
+        .dropdown-menu { display: none; }
+        .brand-slider {
+            display: flex;
+            animation: slide 20s linear infinite;
+        }
+        @keyframes slide {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .fade-in-up {
+            animation: fadeInUp 1s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .sparkle {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background: white;
+            border-radius: 50%;
+            animation: sparkle-anim 1.5s infinite ease-out;
+            opacity: 0;
+        }
+        @keyframes sparkle-anim {
+            0% { transform: scale(0); opacity: 0.5; }
+            50% { opacity: 1; }
+            100% { transform: scale(1.5) rotate(90deg); opacity: 0; }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-green': '#589c69',
+                        'brand-purple': '#662d8e',
+                        'brand-light': '#ececba',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white text-black">
+
+    <!-- Header Section -->
+    <header id="header" class="sticky top-0 z-50">
+        <div id="header-scrolling-ticker" class="bg-brand-purple text-white py-2 flex items-center justify-between px-6">
+            <div class="scrolling-text-container flex-grow">
+                <div class="scrolling-text text-sm">
+                    <span>Welcome to Oli Cleaning Services</span>
+                    <span class="mx-4">&bull;</span>
+                    <span>Commercial Cleaning</span>
+                    <span class="mx-4">&bull;</span>
+                    <span>Office cleaning</span>
+                    <span class="mx-4">&bull;</span>
+                    <span>Small Medical facility cleaning</span>
+                    <span class="mx-4">&bull;</span>
+                    <span>Residential Cleaning</span>
+                    <span class="mx-4">&bull;</span>
+                    <span>Standard home cleaning</span>
+                    <span class="mx-4">&bull;</span>
+                    <span>Deep cleaning</span>
+                    <span class="mx-4">&bull;</span>
+                    <span>Move-in/out cleaning</span>
+                    <!-- Repeat for seamless loop -->
+                    <span class="mx-4">&bull;</span>
+                    <span>Welcome to Oli Cleaning Services</span>
+                    <span class="mx-4">&bull;</span>
+                    <span>Commercial Cleaning</span>
+                    <span class="mx-4">&bull;</span>
+                    <span>Office cleaning</span>
+                    <span class="mx-4">&bull;</span>
+                    <span>Small Medical facility cleaning</span>
+                    <span class="mx-4">&bull;</span>
+                    <span>Residential Cleaning</span>
+                    <span class="mx-4">&bull;</span>
+                    <span>Standard home cleaning</span>
+                    <span class="mx-4">&bull;</span>
+                    <span>Deep cleaning</span>
+                    <span class="mx-4">&bull;</span>
+                    <span>Move-in/out cleaning</span>
+                </div>
+            </div>
+            <a href="#contact-section" class="ml-6 flex-shrink-0 bg-brand-green text-white px-4 py-1.5 rounded-full text-sm font-semibold hover:bg-opacity-90 transition-colors">Book Now</a>
+        </div>
+
+        <!-- Menu Bar Section -->
+        <nav id="main-navigation" class="bg-white shadow-md">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-24">
+                    <div class="flex items-center">
+                        <a href="#" class="flex-shrink-0">
+                            <img class="h-20 w-20 rounded-full object-contain" src="https://leanlivingjourney.com/wp-content/uploads/2025/11/L333L.png" alt="Oli Cleaning Services logo, featuring a friendly cartoon man and woman with cleaning supplies, vibrant colors, transparent background" />
+                        </a>
+                    </div>
+                    <div class="hidden md:block">
+                        <div class="ml-10 flex items-baseline space-x-4">
+                            <a href="#" class="text-gray-700 hover:text-brand-green px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                            <a href="#about-section" class="text-gray-700 hover:text-brand-green px-3 py-2 rounded-md text-sm font-medium">About</a>
+                            <a href="#why-hire-us-section" class="text-gray-700 hover:text-brand-green px-3 py-2 rounded-md text-sm font-medium">Why Hire Us</a>
+                            <div class="relative dropdown">
+                                <button class="text-gray-700 hover:text-brand-green px-3 py-2 rounded-md text-sm font-medium flex items-center">
+                                    Our Cleaning Services <i class="fa-solid fa-chevron-down ml-1 text-xs"></i>
+                                </button>
+                                <div class="dropdown-menu absolute z-10 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+                                    <div class="py-1">
+                                        <a href="#our-cleaning-services-section" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Commercial Cleaning</a>
+                                        <a href="#our-cleaning-services-section" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Residential Cleaning</a>
+                                        <a href="#our-cleaning-services-section" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Deep Cleaning</a>
+                                        <a href="#our-cleaning-services-section" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Move-in/out Cleaning</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#areas-we-serve-section" class="text-gray-700 hover:text-brand-green px-3 py-2 rounded-md text-sm font-medium">Locations</a>
+                            <a href="#" class="text-gray-700 hover:text-brand-green px-3 py-2 rounded-md text-sm font-medium">Blog</a>
+                            <a href="#contact-section" class="text-gray-700 hover:text-brand-green px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+                        </div>
+                    </div>
+                    <div class="hidden md:flex items-center space-x-3">
+                        <button class="text-gray-600 hover:text-brand-green"><i class="fa-solid fa-search"></i></button>
+                        <a href="#contact-section" class="bg-brand-purple text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-opacity-90 transition-colors">Get a Quote</a>
+                        <a href="tel:1234567890" class="bg-brand-green text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-opacity-90 transition-colors flex items-center">
+                            <i class="fa-solid fa-phone mr-2"></i> Call Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero-section" class="relative bg-black text-white h-[850px] flex items-center justify-center text-center">
+            <div class="absolute inset-0">
+                <img class="w-full h-full object-cover opacity-50" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/b05de73510-d9f09f0d780d46d4b26b.png" alt="A bright, modern and exceptionally clean office interior with large windows showing a city skyline, minimalist design, photorealistic" />
+            </div>
+            <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 -mt-48">
+                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight tracking-tight">Sparkling offices and spotless homes —</h1>
+                <p class="mt-4 text-xl md:text-2xl font-light text-gray-200">Reliable commercial and residential cleaning across the USA</p>
+                <p class="mt-6 text-lg text-brand-light font-semibold">Professional Cleaning for Offices, Homes & Medical Facilities</p>
+                
+                <div class="mt-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 text-sm">
+                    <div class="flex flex-col items-center space-y-2">
+                        <div class="bg-white/10 p-3 rounded-full"><i class="fa-solid fa-building text-2xl text-brand-light"></i></div>
+                        <span>Office Cleaning</span>
+                    </div>
+                    <div class="flex flex-col items-center space-y-2">
+                        <div class="bg-white/10 p-3 rounded-full"><i class="fa-solid fa-kit-medical text-2xl text-brand-light"></i></div>
+                        <span>Medical Facility</span>
+                    </div>
+                    <div class="flex flex-col items-center space-y-2">
+                        <div class="bg-white/10 p-3 rounded-full"><i class="fa-solid fa-house-chimney text-2xl text-brand-light"></i></div>
+                        <span>Home Cleaning</span>
+                    </div>
+                    <div class="flex flex-col items-center space-y-2">
+                         <div class="bg-white/10 p-3 rounded-full"><i class="fa-solid fa-spray-can-sparkles text-2xl text-brand-light"></i></div>
+                        <span>Deep Cleaning</span>
+                    </div>
+                    <div class="flex flex-col items-center space-y-2">
+                         <div class="bg-white/10 p-3 rounded-full"><i class="fa-solid fa-truck-moving text-2xl text-brand-light"></i></div>
+                        <span>Move-in/out</span>
+                    </div>
+                </div>
+
+                <div class="mt-10">
+                    <a href="#contact-section" class="bg-brand-green text-white px-10 py-4 rounded-full text-lg font-bold hover:bg-opacity-90 transition-transform hover:scale-105 transform">Book Now</a>
+                </div>
+            </div>
+
+            <div class="relative hidden md:flex justify-center items-center">
+                    <div class="w-96 h-96 rounded-full overflow-hidden shadow-2xl border-8 border-white border-opacity-20">
+                         <img class="w-auto h-auto object-cover" src="https://leanlivingjourney.com/wp-content/uploads/2025/11/L333L.png" alt="Professional cleaner in uniform meticulously wiping a glass surface in a modern, bright office, smiling at the camera, high-resolution." />
+                    </div>
+                </div>
+
+            <div id="hero-booking-form" class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-full max-w-6xl z-20 px-4">
+                <div class="bg-brand-light bg-opacity-20 backdrop-blur-md p-6 rounded-2xl shadow-2xl border border-white/20">
+                    <form class="grid grid-cols-1 md:grid-cols-5 gap-4 items-end">
+                        <div class="col-span-1">
+                            <label for="service-type" class="block text-sm font-medium text-black">Service Type</label>
+                            <select id="service-type" name="service-type" class="mt-1 block w-full pl-3 pr-10 py-3 text-base bg-white/20 border-transparent rounded-md focus:outline-none focus:ring-brand-green focus:border-brand-green sm:text-sm text-white">
+                                <option class="text-black">Residential Cleaning</option>
+                                <option class="text-black">Commercial Cleaning</option>
+                                <option class="text-black">Deep Cleaning</option>
+                            </select>
+                        </div>
+                        <div class="col-span-1">
+                            <label for="location" class="block text-sm font-medium text-black">Zip Code</label>
+                            <input type="text" name="location" id="location" class="mt-1 block w-full pl-3 py-3 text-base bg-white/20 border-transparent rounded-md focus:outline-none focus:ring-brand-green focus:border-brand-green sm:text-sm text-white-500" placeholder="Enter your zip code">
+                        </div>
+                        <div class="col-span-1">
+                            <label for="date" class="block text-sm font-medium text-black">Date</label>
+                            <input type="date" name="date" id="date" class="mt-1 block w-full pl-3 py-3 text-base bg-white/20 border-transparent rounded-md focus:outline-none focus:ring-brand-green focus:border-brand-green sm:text-sm text-white">
+                        </div>
+                        <div class="col-span-1">
+                            <label for="time" class="block text-sm font-medium text-black">Time</label>
+                            <input type="time" name="time" id="time" class="mt-1 block w-full pl-3 py-3 text-base bg-white/20 border-transparent rounded-md focus:outline-none focus:ring-brand-green focus:border-brand-green sm:text-sm text-white">
+                        </div>
+                        <div class="col-span-1">
+                            <button type="submit" class="w-full bg-brand-green text-black px-6 py-3 rounded-md text-base font-semibold hover:bg-opacity-90 transition-colors">Get Estimate</button>
+                        </div>
+                    </form>
+                    <div class="mt-6 flex justify-center items-center space-x-4">
+                        <span class="text-sm text-black">Trusted by:</span>
+                        <div class="flex space-x-6 items-center">
+                            <i class="fa-brands fa-airbnb text-2xl text-black"></i>
+                            <i class="fa-brands fa-google text-2xl text-black"></i>
+                            <i class="fa-brands fa-fedex text-2xl text-black"></i>
+                            <i class="fa-brands fa-microsoft text-2xl text-black"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about-section" class="py-24 bg-gray-50 pt-48">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    <div id="about-content">
+                        <h2 class="text-base font-semibold text-brand-green tracking-wide uppercase">About Oli Cleaning Services</h2>
+                        <p class="mt-2 text-4xl font-extrabold text-gray-900 tracking-tight sm:text-5xl">Your Trusted Partner in Cleanliness and Hygiene</p>
+                        <p class="mt-6 text-lg text-gray-600">Oli Cleaning Services was founded on a simple principle: a clean environment is a healthy and productive one. Our journey began with a small, dedicated team passionate about delivering exceptional cleaning solutions. Today, we've grown into a trusted name for both commercial and residential clients, always upholding our core mission of professionalism, reliability, and stringent safety standards.</p>
+                        <p class="mt-4 text-lg text-gray-600">Our team is our greatest asset. Each member is professionally trained, background-checked, and fully insured, ensuring you receive a service that is not only effective but also completely secure and trustworthy.</p>
+                        <div class="mt-8 flex space-x-4">
+                            <div class="flex items-center">
+                                <i class="fa-solid fa-shield-halved text-brand-green text-2xl"></i>
+                                <span class="ml-3 font-medium text-gray-700">Insured & Bonded</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fa-solid fa-user-check text-brand-green text-2xl"></i>
+                                <span class="ml-3 font-medium text-gray-700">Trained Professionals</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="about-media" class="grid grid-cols-2 gap-4">
+                        <div class="relative col-span-2 group">
+                            <img class="w-full h-auto max-h-80 object-cover rounded-2xl shadow-lg" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/682997bd11-a7f1815efeec22a94166.png" alt="A smiling cleaning professional in uniform giving a thumbs up in a spotless office, cinematic lighting" />
+                            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl">
+                                <button class="text-white bg-brand-green rounded-full w-16 h-16 flex items-center justify-center"><i class="fa-solid fa-play text-2xl"></i></button>
+                            </div>
+                        </div>
+                        <div class="relative group">
+                            <img class="w-full h-auto max-h-64 object-cover rounded-2xl shadow-lg" src="https://leanlivingjourney.com/wp-content/uploads/2025/11/IMG_2995.jpg" alt="Close-up of a happy homeowner smiling in their sparkling clean kitchen, natural light" />
+                        </div>
+                        <div class="bg-brand-purple text-white p-6 rounded-2xl shadow-lg flex flex-col justify-center items-center text-center">
+                            <div class="flex text-yellow-400 text-2xl">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="mt-2 text-sm font-semibold">"Absolutely fantastic service. Our office has never looked better!"</p>
+                            <p class="mt-4 text-xs text-gray-200">- Sarah L., Office Manager</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Services Section -->
+        <section id="our-services-section" class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-base font-semibold text-brand-green tracking-wide uppercase">What We Do</h2>
+                <p class="mt-2 text-4xl font-extrabold text-gray-900 tracking-tight">Comprehensive Cleaning Solutions</p>
+                <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Commercial Cleaning Card -->
+                    <div class="bg-gray-50 rounded-2xl p-8 shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-brand-purple text-white mx-auto">
+                            <i class="fa-solid fa-building text-3xl"></i>
+                        </div>
+                        <h3 class="mt-6 text-xl font-bold text-gray-900">Commercial Cleaning</h3>
+                        <p class="mt-4 text-gray-600">Tailored cleaning services for offices, retail spaces, and medical facilities to maintain a professional and healthy environment.</p>
+                    </div>
+                    <!-- Residential Cleaning Card -->
+                    <div class="bg-gray-50 rounded-2xl p-8 shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-brand-purple text-white mx-auto">
+                            <i class="fa-solid fa-house-chimney text-3xl"></i>
+                        </div>
+                        <h3 class="mt-6 text-xl font-bold text-gray-900">Residential Cleaning</h3>
+                        <p class="mt-4 text-gray-600">From standard upkeep to deep cleans, we make your home a sanctuary of cleanliness and comfort for you and your family.</p>
+                    </div>
+                    <!-- Deep Cleaning Card -->
+                    <div class="bg-gray-50 rounded-2xl p-8 shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-brand-purple text-white mx-auto">
+                           <i class="fa-solid fa-spray-can-sparkles text-3xl"></i>
+                        </div>
+                        <h3 class="mt-6 text-xl font-bold text-gray-900">Deep Cleaning</h3>
+                        <p class="mt-4 text-gray-600">An intensive, top-to-bottom cleaning that targets grime and dirt in hard-to-reach areas for a truly spotless result.</p>
+                    </div>
+                    <!-- Medical Facility Cleaning Card -->
+                    <div class="bg-gray-50 rounded-2xl p-8 shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-brand-purple text-white mx-auto">
+                            <i class="fa-solid fa-kit-medical text-3xl"></i>
+                        </div>
+                        <h3 class="mt-6 text-xl font-bold text-gray-900">Medical Facility Cleaning</h3>
+                        <p class="mt-4 text-gray-600">Specialized cleaning protocols to ensure clinics and small medical offices meet the highest standards of hygiene and sanitation.</p>
+                    </div>
+                    <!-- Move-in/out Cleaning Card -->
+                    <div class="bg-gray-50 rounded-2xl p-8 shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-brand-purple text-white mx-auto">
+                           <i class="fa-solid fa-truck-moving text-3xl"></i>
+                        </div>
+                        <h3 class="mt-6 text-xl font-bold text-gray-900">Move-in/out Cleaning</h3>
+                        <p class="mt-4 text-gray-600">Ensure a fresh start for new occupants or secure your deposit with our thorough move-in and move-out cleaning services.</p>
+                    </div>
+                    <!-- Standard Home Cleaning Card -->
+                    <div class="bg-gray-50 rounded-2xl p-8 shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-brand-purple text-white mx-auto">
+                            <i class="fa-solid fa-broom text-3xl"></i>
+                        </div>
+                        <h3 class="mt-6 text-xl font-bold text-gray-900">Standard Home Cleaning</h3>
+                        <p class="mt-4 text-gray-600">Our regular cleaning service keeps your home consistently tidy and fresh, covering all the essential areas on a recurring basis.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How Oli Can Help Section -->
+        <section id="how-oli-helps" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold">How Oli Maid Can Help</h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto mt-4">We transform your spaces, giving you back time and peace of mind. See how we make a difference.</p>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div class="space-y-8">
+                        <!-- Help Item -->
+                        <div class="flex items-start gap-6">
+                            <div class="w-40 h-28 rounded-lg overflow-hidden flex-shrink-0 shadow-md">
+                                <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/e274f82b4d-ff51b73262e6c6e6447e.png" alt="A bright and organized home office after a professional cleaning." />
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Healthier Work Environments</h3>
+                                <p class="text-gray-600 mb-3">We reduce allergens, dust, and germs, creating a healthier space for your employees and customers.</p>
+                                <a href="#" class="font-semibold text-brand-green hover:underline">Learn More <i class="fa-solid fa-arrow-right text-xs"></i></a>
+                            </div>
+                        </div>
+                        <!-- Help Item with Video -->
+                         <div class="flex items-start gap-6">
+                            <div class="w-40 h-28 rounded-lg overflow-hidden flex-shrink-0 shadow-md relative flex items-center justify-center bg-black">
+                                <img class="w-full h-full object-cover opacity-60" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/7508807da5-ac5b1b60741609fe7edc.png" alt="Video still: time-lapse of a cluttered room becoming perfectly clean and organized." />
+                                <i class="fa-solid fa-play-circle text-white text-4xl absolute"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">More Free Time For You</h3>
+                                <p class="text-gray-600 mb-3">Reclaim your weekends. Let us handle the cleaning so you can focus on what matters most.</p>
+                                <a href="#" class="font-semibold text-brand-green hover:underline">Learn More <i class="fa-solid fa-arrow-right text-xs"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-8">
+                         <!-- Help Item -->
+                        <div class="flex items-start gap-6">
+                            <div class="w-40 h-28 rounded-lg overflow-hidden flex-shrink-0 shadow-md">
+                                <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/0c42dc4a84-6876fa627400f2cc8aed.png" alt="A property manager handing keys to happy new tenants in a sparkling clean apartment." />
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Stress-Free Moving</h3>
+                                <p class="text-gray-600 mb-3">Our move-in/out cleaning services ensure a smooth transition for tenants and homeowners.</p>
+                                <a href="#" class="font-semibold text-brand-green hover:underline">Learn More <i class="fa-solid fa-arrow-right text-xs"></i></a>
+                            </div>
+                        </div>
+                         <!-- Help Item with Video -->
+                         <div class="flex items-start gap-6">
+                            <div class="w-40 h-28 rounded-lg overflow-hidden flex-shrink-0 shadow-md relative flex items-center justify-center bg-black">
+                                <img class="w-full h-full object-cover opacity-60" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/beb6cc0312-b781672283f620f57e11.png" alt="Video still of a cleaner using specialized equipment in a small medical clinic." />
+                                <i class="fa-solid fa-play-circle text-white text-4xl absolute"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Specialized Care</h3>
+                                <p class="text-gray-600 mb-3">We use industry-approved methods and products for sensitive environments like medical facilities.</p>
+                                <a href="#" class="font-semibold text-brand-green hover:underline">Learn More <i class="fa-solid fa-arrow-right text-xs"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Why Hire Us Section -->
+        <section id="why-hire-us-section" class="py-24 bg-brand-light">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-base font-semibold text-brand-purple tracking-wide uppercase">The Oli Advantage</h2>
+                    <p class="mt-2 text-4xl font-extrabold text-gray-900 tracking-tight">Why Choose Oli Cleaning Services?</p>
+                </div>
+                <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Feature Card 1 -->
+                    <div class="bg-white rounded-2xl shadow-xl overflow-hidden group">
+                        <div class="h-56 overflow-hidden">
+                            <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/3f089d4c2e-2918817292f3c04090bd.png" alt="A professional cleaner meticulously wiping a glass office wall, focus on detail, bright lighting" />
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900">Quality Guarantee</h3>
+                            <p class="mt-3 text-gray-600">We stand by our work. If you're not 100% satisfied, we'll come back and make it right. Your happiness is our top priority.</p>
+                        </div>
+                    </div>
+                    <!-- Feature Card 2 (Video) -->
+                    <div class="bg-white rounded-2xl shadow-xl overflow-hidden group">
+                        <div class="h-56 overflow-hidden relative">
+                            <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/492d6ee9d7-e8f284db27883f63795c.png" alt="A friendly customer support agent with a headset smiling in a modern call center, professional" />
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                                <button class="text-white bg-brand-green rounded-full w-14 h-14 flex items-center justify-center transform group-hover:scale-110 transition-transform"><i class="fa-solid fa-play text-xl"></i></button>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900">24/7 Customer Support</h3>
+                            <p class="mt-3 text-gray-600">Have a question or need to reschedule? Our dedicated support team is available around the clock to assist you.</p>
+                        </div>
+                    </div>
+                    <!-- Feature Card 3 -->
+                    <div class="bg-white rounded-2xl shadow-xl overflow-hidden group">
+                        <div class="h-56 overflow-hidden">
+                            <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/3c07b15d81-22fc20b094456023e814.png" alt="A person easily booking a cleaning service on their smartphone, showing a clean user interface" />
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900">Flexible Scheduling</h3>
+                            <p class="mt-3 text-gray-600">We work around your schedule. Book one-time, weekly, bi-weekly, or monthly cleanings with our easy online system.</p>
+                        </div>
+                    </div>
+                     <!-- Feature Card 4 -->
+                    <div class="bg-white rounded-2xl shadow-xl overflow-hidden group">
+                        <div class="h-56 overflow-hidden">
+                            <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/ba71851049-f0573a802971bbb877b9.png" alt="A transparent piggy bank being filled with coins, symbolizing savings and competitive pricing" />
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900">Competitive Pricing</h3>
+                            <p class="mt-3 text-gray-600">Top-tier service doesn't have to break the bank. We offer transparent, competitive rates with no hidden fees.</p>
+                        </div>
+                    </div>
+                    <!-- Feature Card 5 -->
+                     <div class="bg-white rounded-2xl shadow-xl overflow-hidden group">
+                        <div class="h-56 overflow-hidden">
+                            <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/28b14d3eec-9a7b00e815a72ddaa7e0.png" alt="Team of uniformed cleaners standing together and smiling confidently, diverse group" />
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900">Vetted Professionals</h3>
+                            <p class="mt-3 text-gray-600">Every member of our team is rigorously vetted, trained, and insured for your peace of mind and security.</p>
+                        </div>
+                    </div>
+                    <!-- Feature Card 6 (Video) -->
+                    <div class="bg-white rounded-2xl shadow-xl overflow-hidden group">
+                        <div class="h-56 overflow-hidden relative">
+                            <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/19d4da227a-392e913b746dbb29c60a.png" alt="Eco-friendly cleaning products arranged neatly on a wooden surface, green leaves in the background" />
+                             <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                                <button class="text-white bg-brand-green rounded-full w-14 h-14 flex items-center justify-center transform group-hover:scale-110 transition-transform"><i class="fa-solid fa-play text-xl"></i></button>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900">Eco-Friendly Options</h3>
+                            <p class="mt-3 text-gray-600">We care about your health and the planet. Ask about our green cleaning solutions using sustainable products.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detailed Cleaning Services Section -->
+        <section id="our-services-details" class="py-20 bg-brand-cream">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold">A Closer Look at Our Services</h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto mt-4">Detailed solutions for every cleaning need. Find the perfect service for your space.</p>
+                </div>
+                <div class="space-y-12">
+                    <!-- Service Detail Card -->
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center bg-white p-8 rounded-xl shadow-lg">
+                        <div class="flex gap-4">
+                            <div class="w-1/2 rounded-lg overflow-hidden h-64"><img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/19668afa60-3ba28bf2d707b8376893.png" alt="A modern, clean open-plan office space after hours." /></div>
+                            <div class="w-1/2 rounded-lg overflow-hidden h-64 relative flex items-center justify-center bg-black">
+                                <img class="w-full h-full object-cover opacity-60" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/4a8a28ff8f-86f138646e3a1f49bc67.png" alt="Video still of a cleaner efficiently vacuuming an office carpet." />
+                                <i class="fa-solid fa-play-circle text-white text-5xl absolute"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-semibold text-brand-green mb-3">Commercial Cleaning</h3>
+                            <p class="text-gray-600 mb-6">We provide reliable and efficient cleaning services for offices, retail spaces, and other commercial properties. Our services include dusting, vacuuming, trash removal, and restroom sanitation.</p>
+                            <div class="flex space-x-4">
+                                <a href="#" class="bg-brand-green text-white px-5 py-2.5 rounded-full font-semibold hover:bg-brand-green-dark">Book Now</a>
+                                <a href="#" class="bg-gray-200 text-gray-800 px-5 py-2.5 rounded-full font-semibold hover:bg-gray-300">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Service Detail Card -->
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center bg-white p-8 rounded-xl shadow-lg">
+                         <div>
+                            <h3 class="text-2xl font-semibold text-brand-purple mb-3">Residential Cleaning</h3>
+                            <p class="text-gray-600 mb-6">Our residential services cover everything from standard weekly cleanings to intensive deep cleans. We treat your home with the utmost care and respect, leaving it fresh and inviting.</p>
+                            <div class="flex space-x-4">
+                                <a href="#" class="bg-brand-purple text-white px-5 py-2.5 rounded-full font-semibold hover:bg-brand-purple-dark">Book Now</a>
+                                <a href="#" class="bg-gray-200 text-gray-800 px-5 py-2.5 rounded-full font-semibold hover:bg-gray-300">Learn More</a>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-1/2 rounded-lg overflow-hidden h-64"><img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/4012a39fff-32ddc6323146a6899afe.png" alt="A beautifully clean and tidy modern kitchen with stainless steel appliances." /></div>
+                            <div class="w-1/2 rounded-lg overflow-hidden h-64 relative flex items-center justify-center bg-black">
+                                <img class="w-full h-full object-cover opacity-60" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/1c7d816bcc-06d3a2834515a9c4e6c8.png" alt="Video still of a cleaner wiping down a marble countertop." />
+                                <i class="fa-solid fa-play-circle text-white text-5xl absolute"></i>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- Service Detail Card -->
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center bg-white p-8 rounded-xl shadow-lg">
+                        <div class="flex gap-4">
+                            <div class="w-1/2 rounded-lg overflow-hidden h-64"><img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/25554f252f-9cbdc39ba92dddb2392f.png" alt="An empty apartment with clean floors and windows, ready for new tenants." /></div>
+                            <div class="w-1/2 rounded-lg overflow-hidden h-64 relative flex items-center justify-center bg-black">
+                                <img class="w-full h-full object-cover opacity-60" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/0b24446a0f-30c286d2c479bd2133db.png" alt="Video still of a cleaner deep cleaning an oven." />
+                                <i class="fa-solid fa-play-circle text-white text-5xl absolute"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-semibold text-brand-green mb-3">Move-in/out Cleaning</h3>
+                            <p class="text-gray-600 mb-6">Ensure you get your deposit back or prepare your new home for arrival. Our comprehensive checklist covers everything from baseboards to ceiling fans for a complete clean.</p>
+                            <div class="flex space-x-4">
+                                <a href="#" class="bg-brand-green text-white px-5 py-2.5 rounded-full font-semibold hover:bg-brand-green-dark">Book Now</a>
+                                <a href="#" class="bg-gray-200 text-gray-800 px-5 py-2.5 rounded-full font-semibold hover:bg-gray-300">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partners & Clients Section -->
+        <section id="partners" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-10">Our Proud Partnerships & Clients</h2>
+                <div class="relative w-full overflow-hidden">
+                    <div class="flex brand-slider">
+                        <!-- Duplicate the set for seamless scrolling -->
+                        <div class="flex items-center justify-around w-full flex-shrink-0 space-x-16">
+                            <img class="h-20 object-contain" src="https://static.vecteezy.com/system/resources/previews/069/864/343/non_2x/fedex-logo-transparent-rounded-app-icon-free-png.png" alt="Logo for a modern tech company, minimalist design." />
+                            <img class="h-20 object-contain" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRx0EjZh6M3gxu0Vlq1-YfguKC9SHerUL-Scw&s" alt="Logo for a corporate real estate firm, professional and clean." />
+                            <img class="h-20 object-contain" src="https://dcassetcdn.com/design_img/1419904/529642/529642_7269674_1419904_4cf64a5b_image.jpg" alt="Logo for a luxury apartment complex, elegant font." />
+                            <img class="h-20 object-contain" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVf1X4A3YrGxARm7mmVVUKvb_JVZ-6InsbhOBJCenxHutPTD1hQ9PoFM5dLFeUKCKHRMY&usqp=CAU" alt="Logo for a local medical clinic, trustworthy and simple." />
+                            <img class="h-20 object-contain" src="https://dcassetcdn.com/design_img/3741367/654018/22592035/b18n5nas2ywn56b4kmvhe39k9t_image.jpg" alt="Logo for a co-working space, vibrant and creative." />
+                            <img class="h-20 object-contain" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWFdZwbaeeqGIjbE9H7TmiT74_sB9y0vhl9w&s" alt="Logo for a boutique retail store, chic and stylish." />
+                        </div>
+                        <div class="flex items-center justify-around w-full flex-shrink-0 space-x-16">
+                            <img class="h-20 object-contain" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb373p9vRPFwJgoblB1oec-e6zmaECyfvE-w&s" alt="Logo for a modern tech company, minimalist design." />
+                            <img class="h-20 object-contain" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAjaOhDGnj531Uf1Hz08_6Nziou8zWrU4dzA&s" alt="Logo for a corporate real estate firm, professional and clean." />
+                            <img class="h-20 object-contain" src="https://dynamic.brandcrowd.com/asset/logo/2a6320a6-c4c2-4ecb-ba83-51a1db76b32a/logo-search-grid-2x?logoTemplateVersion=3&v=638869754724770000" alt="Logo for a luxury apartment complex, elegant font." />
+                            <img class="h-20 object-contain" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgWQs0cM3TAvoqZ40FFAQzV1n_Ai-GkyWeMA&s" alt="Logo for a local medical clinic, trustworthy and simple." />
+                            <img class="h-20 object-contain" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMSRFBmma8Cm1X8q1oSKzaiWyfQPLSqi8dJQ&s" alt="Logo for a co-working space, vibrant and creative." />
+                            <img class="h-20 object-contain" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwxbg20IIs9XZB1ReUuCHWFWop5hZdFMppeQ&s" alt="Logo for a boutique retail store, chic and stylish." />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section id="process" class="py-20 bg-gray-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold">Our Simple 4-Step Process</h2>
+                    <p class="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">Getting a sparkling clean space has never been easier.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                    <!-- Step 1 -->
+                    <div class="flex flex-col items-center">
+                        <div class="w-48 h-48 rounded-full overflow-hidden mb-4 border-4 border-brand-green shadow-lg"><img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/e7ff7edfa9-07b99f07ab199069cf78.png" alt="A person filling out an online booking form on a tablet." /></div>
+                        <h3 class="text-xl font-bold mb-2">1. Book Online</h3>
+                        <p class="text-gray-600">Choose your service, select a date and time, and get an instant quote on our secure platform.</p>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="flex flex-col items-center">
+                        <div class="w-48 h-48 rounded-full overflow-hidden mb-4 border-4 border-brand-purple shadow-lg"><img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/ea765d601e-c3cd660257b69cda4558.png" alt="A friendly customer service representative with a headset on, smiling." /></div>
+                        <h3 class="text-xl font-bold mb-2">2. We Confirm</h3>
+                        <p class="text-gray-600">You'll receive a confirmation email and a reminder before your scheduled cleaning appointment.</p>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="flex flex-col items-center">
+                        <div class="w-48 h-48 rounded-full overflow-hidden mb-4 border-4 border-brand-green shadow-lg"><img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/3491a17371-25973ba0fa7d504e0d5b.png" alt="A professional cleaner in uniform arriving at a doorstep with cleaning supplies." /></div>
+                        <h3 class="text-xl font-bold mb-2">3. We Clean</h3>
+                        <p class="text-gray-600">Our professional team arrives on time with all the necessary supplies to make your space shine.</p>
+                    </div>
+                    <!-- Step 4 -->
+                    <div class="flex flex-col items-center">
+                        <div class="w-48 h-48 rounded-full overflow-hidden mb-4 border-4 border-brand-purple shadow-lg"><img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/89bcb5ba92-702e1031fcd7efe78e3d.png" alt="A happy person relaxing with a cup of coffee in their impeccably clean home." /></div>
+                        <h3 class="text-xl font-bold mb-2">4. You Relax</h3>
+                        <p class="text-gray-600">Enjoy your sparkling clean home or office. Rate our service and provide feedback to help us improve.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Areas We Serve Section -->
+        <section id="areas-we-serve-section" class="py-24 bg-gray-800 relative">
+            <div class="absolute inset-0">
+                <img class="w-full h-full object-cover opacity-20" src="https://patriotusallc.com/wp-content/uploads/2016/07/Floor-Dust-1024x423.jpg" alt="A stylized map of the USA with glowing city points, dark background, futuristic design" />
+            </div>
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+                <h2 class="text-4xl font-extrabold tracking-tight">Serving Communities Across the Nation</h2>
+                <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-300">We're proud to offer our top-rated cleaning services in major metropolitan areas and their surrounding suburbs. Find your location below.</p>
+                <div class="mt-12 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+                    <div class="bg-white/10 p-4 rounded-lg backdrop-blur-sm hover:bg-white/20 transition-colors cursor-pointer">New York, NY</div>
+                    <div class="bg-white/10 p-4 rounded-lg backdrop-blur-sm hover:bg-white/20 transition-colors cursor-pointer">Los Angeles, CA</div>
+                    <div class="bg-white/10 p-4 rounded-lg backdrop-blur-sm hover:bg-white/20 transition-colors cursor-pointer">Chicago, IL</div>
+                    <div class="bg-white/10 p-4 rounded-lg backdrop-blur-sm hover:bg-white/20 transition-colors cursor-pointer">Houston, TX</div>
+                    <div class="bg-white/10 p-4 rounded-lg backdrop-blur-sm hover:bg-white/20 transition-colors cursor-pointer">Phoenix, AZ</div>
+                    <div class="bg-white/10 p-4 rounded-lg backdrop-blur-sm hover:bg-white/20 transition-colors cursor-pointer">Philadelphia, PA</div>
+                    <div class="bg-white/10 p-4 rounded-lg backdrop-blur-sm hover:bg-white/20 transition-colors cursor-pointer">San Antonio, TX</div>
+                    <div class="bg-white/10 p-4 rounded-lg backdrop-blur-sm hover:bg-white/20 transition-colors cursor-pointer">San Diego, CA</div>
+                    <div class="bg-white/10 p-4 rounded-lg backdrop-blur-sm hover:bg-white/20 transition-colors cursor-pointer">Dallas, TX</div>
+                    <div class="bg-white/10 p-4 rounded-lg backdrop-blur-sm hover:bg-white/20 transition-colors cursor-pointer">Austin, TX</div>
+                </div>
+                <p class="mt-8 text-sm text-gray-400">Don't see your city? Contact us to inquire about service availability in your area.</p>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact-section" class="py-24 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-16 items-start">
+                <div id="contact-info">
+                    <h2 class="text-base font-semibold text-brand-green tracking-wide uppercase">Get in Touch</h2>
+                    <p class="mt-2 text-4xl font-extrabold text-gray-900 tracking-tight">Request a Free Quote Today!</p>
+                    <p class="mt-4 text-lg text-gray-600">Ready for a sparkling clean space? Fill out the form, and one of our cleaning consultants will get back to you shortly. For immediate assistance, feel free to give us a call.</p>
+                    <div class="mt-8 space-y-6">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 h-12 w-12 bg-brand-green text-white rounded-lg flex items-center justify-center">
+                                <i class="fa-solid fa-map-marker-alt text-2xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-gray-900">Our Address</h3>
+                                <p class="text-gray-600">123 Clean Street, Suite 100, Sparkle City, USA 12345</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 h-12 w-12 bg-brand-green text-white rounded-lg flex items-center justify-center">
+                                <i class="fa-solid fa-phone text-2xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-gray-900">Call Us</h3>
+                                <p class="text-gray-600">(123) 456-7890</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 h-12 w-12 bg-brand-green text-white rounded-lg flex items-center justify-center">
+                                <i class="fa-solid fa-envelope text-2xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-gray-900">Email Us</h3>
+                                <p class="text-gray-600">contact@oliservices.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="contact-form-container" class="bg-white p-8 rounded-2xl shadow-2xl">
+                    <form action="#" method="POST" class="space-y-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label for="first-name" class="block text-sm font-medium text-gray-700">First Name</label>
+                                <input type="text" name="first-name" id="first-name" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-brand-green focus:border-brand-green">
+                            </div>
+                            <div>
+                                <label for="last-name" class="block text-sm font-medium text-gray-700">Last Name</label>
+                                <input type="text" name="last-name" id="last-name" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-brand-green focus:border-brand-green">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                            <input type="email" name="email" id="email" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-brand-green focus:border-brand-green">
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700">Phone</label>
+                            <input type="tel" name="phone" id="phone" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-brand-green focus:border-brand-green">
+                        </div>
+                        <div>
+                            <label for="service-required" class="block text-sm font-medium text-gray-700">Service Required</label>
+                            <select id="service-required" name="service-required" class="mt-1 block w-full pl-3 pr-10 py-3 text-base border-gray-300 focus:outline-none focus:ring-brand-green focus:border-brand-green sm:text-sm rounded-md">
+                                <option>Commercial Cleaning</option>
+                                <option>Residential Cleaning</option>
+                                <option>Deep Cleaning</option>
+                                <option>Move-In/Out Cleaning</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+                            <textarea id="message" name="message" rows="4" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-brand-green focus:border-brand-green"></textarea>
+                        </div>
+                        <div>
+                            <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-lg font-medium text-white bg-brand-purple hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-purple">Send Request</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer id="footer" class="bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
+                <div class="col-span-2 md:col-span-4 lg:col-span-1">
+                    <img class="h-24 w-24 rounded-full object-contain bg-white p-2" src="https://leanlivingjourney.com/wp-content/uploads/2025/11/L333L.png" alt="Oli Cleaning Services logo, featuring a friendly cartoon man and woman with cleaning supplies, vibrant colors" />
+                    <p class="mt-4 text-sm text-gray-400">Professional cleaning services for a healthier, happier space. Serving commercial and residential clients nationwide.</p>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold tracking-wider uppercase">Navigation</h3>
+                    <ul class="mt-4 space-y-2">
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white">Home</a></li>
+                        <li><a href="#about-section" class="text-base text-gray-300 hover:text-white">About Us</a></li>
+                        <li><a href="#our-services-section" class="text-base text-gray-300 hover:text-white">Services</a></li>
+                        <li><a href="#contact-section" class="text-base text-gray-300 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold tracking-wider uppercase">Services</h3>
+                    <ul class="mt-4 space-y-2">
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white">Commercial</a></li>
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white">Residential</a></li>
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white">Deep Cleaning</a></li>
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white">Move-In/Out</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold tracking-wider uppercase">Follow Us</h3>
+                    <div class="mt-4 flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fa-brands fa-facebook-f text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fa-brands fa-instagram text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fa-brands fa-twitter text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fa-brands fa-linkedin-in text-xl"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold tracking-wider uppercase">We Accept</h3>
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <i class="fa-brands fa-cc-visa text-3xl text-gray-300"></i>
+                        <i class="fa-brands fa-cc-mastercard text-3xl text-gray-300"></i>
+                        <i class="fa-brands fa-cc-amex text-3xl text-gray-300"></i>
+                        <i class="fa-brands fa-cc-paypal text-3xl text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-gray-700 pt-8 text-center text-sm text-gray-400">
+                <p>@2025 Oli Cleaning Services. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const container = document.getElementById('sparkle-container');
+        if (container) {
+            for (let i = 0; i < 20; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'sparkle';
+                sparkle.style.top = `${Math.random() * 100}%`;
+                sparkle.style.left = `${Math.random() * 100}%`;
+                sparkle.style.animationDelay = `${Math.random() * 2}s`;
+                sparkle.style.animationDuration = `${1 + Math.random()}s`;
+                container.appendChild(sparkle);
+            }
+        }
+    });
+    </script>
+
+</body>
+</html>
